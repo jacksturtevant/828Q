@@ -13,25 +13,54 @@ move_list = []
             # [Point(2.5, 6.25), Point(1, 7.5), Point(1.5, 7.5), Point(1.5, 6.5)],
             # [Point(2.5, 6.25), Point(1.5, 7.5), Point(1.5, 7.5), Point(2.5, 6.25)]]
 
-width = 14
-height = 9
+colors = ["red", "blue", "purple"]
 
+width = 280
+height = 180
+factor = 5.0
 def readInput():
-    lines = stdin.readlines("positions.txt")
+    pos_file = open("positions.txt", "r")
+    lines = pos_file.readlines()
     temp = []
     obstacles = True
     for line in lines:
+        print(line)
         if line[0] == 'b':
             l = line.split()
             temp.append(Point(float(l[1]), float(l[2])))
         elif obstacles:
             poly_arr.append(temp)
+            l = line.split()
+            point = Point(float(l[1]), float(l[2]))
+            angle = float(l[2])
+            temp = []
+            temp.append([point, angle])
+            print(poly_arr)
+            obstacles = False
+        elif line[0] == '0':
+            move_list.append(temp)
+            temp = []
+            print(move_list)
+            l = line.split()
+            point = Point(float(l[1]), float(l[2]))
+            angle = float(l[2])
+            temp.append([point, angle])
+        else:
+            l = line.split()
+            point = Point(float(l[1]), float(l[2]))
+            angle = float(l[2])
+            temp.append([point, angle])
+    i = 0
+    for start in move_list[0]:
+        fight_arr.append([start[0], start[1], colors[i]])
+        i += 1
+
 
 def setWindow():
-    win = GraphWin(width=width*100, height=height*100)
-    win.setCoords(0,0,width,height)
+    win = GraphWin(width=width*factor, height=height*factor)
+    win.setCoords(-width,-height,width,height)
     win.setBackground("green")
-    rect = Rectangle(Point(0.1, 0.1), Point(width-0.1,height-0.1))
+    rect = Rectangle(Point(10.0/factor-width, 10.0/factor-height), Point(width-10.0/factor,height-10.0/factor))
     rect.draw(win)
     rect.setFill("#654321")
     return win
@@ -72,6 +101,7 @@ def end_game(win, fighters, winner):
     win.getMouse()
 
 def simulate():
+    readInput()
     win = setWindow()
     setObstacles(win, poly_arr)
 
