@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{jack-resume}
+\usepackage{progressbar}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{Jack}{Sturtevant}{ 
+\href{mailto:jack.a.sturtevant@gmail.com}{jsturtev@terpmail.umd.edu \ExternalLink} | 508-951-0133
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t][1cm][t]{.03\textwidth} 
+\hfill
+\end{minipage} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Summary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Summary}
+% Graduating Senior with experience developing predictive analytical models on cloud platforms and working as a software developer for startups and industry leaders.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education} 
+\subsection{A. James Clark School of Engineering, University Of Maryland \hfill GPA: 3.92}
+\descriptit{Bachelor of Science in Computer Engineering, University Honors} \hfill \descript{Expected Grad. May 2020 | College Park, MD}
+\begin{tightemize}
+    \item \href{https://www.rhsmith.umd.edu/programs/undergraduate-programs/academics/fellows-special-programs/quest}{QUEST \ExternalLink}: Program focused on business and technology collaboration for solving complex design challenges
+    \item Championing task force creating community of students and alumni that provides mentorship for student entrepreneurs
+    \item Venture Founder, \href{https://startupshell.org/}{Startup Shell \ExternalLink}: Selected to on-campus startup incubator which offers mentoring from professionals, e.g. founders of sucessful startups and members of venture capitalists firms
+\end{tightemize}
+% \descriptbf{Communities \& Organizations}
+% \descriptbf{\href{https://startupshell.org/}{Startup Shell \ExternalLink}}
+% \descript{Student-run coworking space and incubator at the University of Maryland for fostering entrepreneurship through collaboration}
+% \descriptbf{}
+% \descript{Honors program focused on business and technology collaboration for solving complex design challenges}
+% \descriptbf{\href{https://www.universityhonors.umd.edu/}{University Honors \ExternalLink}}
+% \descript{Advanced coursework in math and research}
+% \descript{Danmarks Technical Universitet \hfill 2018}
+% \descript{Technische Universität Berlin \hfill 2016}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Experience}
+
+\runsubsection{\href{https://aws.amazon.com/security/provable-security/}{Amazon Web Services \ExternalLink}}
+\location{Seattle, WA}
+\descriptit{Software Development Engineer Intern}
+\location{May 2019 - August 2019}
+\begin{tightemize}
+    \item Enabled mathematical verification of AWS products through compilation from Dafny to Java, see \href{https://github.com/dafny-lang/dafny}{Github \ExternalLink}
+    \item Wrote 4000+ lines of C\# and Java code vetted by senior engineers
+    \item Allowed compilation from imperative language to object oriented languages through novel compilation techniques designed alongside senior engineers
+    \item Expedited development window by 6 months by solving system wide bugs aiding implementation in other intern projects
+\end{tightemize}
+\sectionsep
+
+\runsubsection{\href{http://www.robotics.umd.edu/}{{Maryland Robotics Center \ExternalLink}}}
+\location{Aug 2019 – Present | College Park, MD}
+\descriptit{Undergraduate Robotics Researcher}
+\begin{tightemize}
+    \item Develop cutting edge emotion detecting algorithms based on human gait tracking provided through OpenCV
+    %\item Improve robot navigation through crowds by tracking human gait to extrapolate emotional state
+    \item Program \href{https://arxiv.org/abs/1903.03217}{{emotionally intelligent Turtlebots \ExternalLink}} using ROS to navigate through crowd of humans while reacting to their emotions
+    \item Train robots using novel \href{https://arxiv.org/abs/1807.07870}{{CrowdMove \ExternalLink}} technique, which involves Reinforcement Learning, Artificial Neural Networks, and in-house 3M method
+\end{tightemize}
+\sectionsep
+
+\runsubsection{\href{https://www.linkedin.com/company/hydraze}{Hydraze, Inc \ExternalLink}}
+\location{College Park, MD}
+\descriptit{Chief Technology Officer}
+\location{January 2019 – Present}
+\begin{tightemize}
+    \item Awarded \$16,000+ through first place finishes in \href{https://dogood.umd.edu/research-impact/projects/do-good-challenge}{pitch competitions \ExternalLink} and sustainability grants against 150+ competitors
+    \item Reduce toilet operating expenses by 45\% through novel IOT flushing technology built for installation and maintenance ease 
+    \item Improve data collection process by leading software and electrical prototyping of low energy micro-controllers
+    \item Minimize costs to achieve corporate ROI through equipment, economic, and environmental research 
+    \item Integrate stakeholder feedback through client interviews to develop product requirements and roadmap
+    \item Guide company vision by creating a business model with insight from advisors that have founded successful startups 
+    \item Increase brand awareness by developing company website, managing LinkedIn page, and working with designers to develop a professional logo
+    \item Secure company funding by applying to and presenting in various student centered pitch competitions around the world
+\end{tightemize}
+\sectionsep
+
+\runsubsection{\href{https://terrapinworks.umd.edu/}{Terrapin Works \ExternalLink}} 
+\location{College Park, MD}
+\descriptit{Software Team Founder \& Manager}
+\location{July 2018 – March 2019}
+\begin{tightemize}
+\item Built software engineering team by expanding team from one member to 12
+\item Established organizational hierarchies within teams to maximize team communication and reduce roadblocks
+\item Secured contracts with 2 new clients by assessing their needs in stakeholder meetings and designing teams around them
+\item Increased productivity by 50\% and reduced inefficiencies by implementing agile cycle for development teams
+\item Designed roadmap for future projects to protect team from constant churn and volatility of evolving leadership
+\end{tightemize}
+\descriptit{Software Developer}
+\location{February 2017 – July 2018}
+\begin{tightemize}
+\item Streamlined machine management, training, scheduling, and payment by creating a Dockerized app that improves lab-student interaction
+\item Visually display administrative hourly data to communicate essential volunteer information using a raspberry pi causing 20\% reduction in time waste 
+\item Transitioned company workflow to PaperCut, a printing automation tool, allowing for seamless billing process
+\end{tightemize}
+\sectionsep
+
+% \runsubsection{\href{https://startupshell.org/}{Startup Shell \ExternalLink}}
+% \location{March 2019 - Present | College Park, MD}
+% \descriptit{Venture Founder}
+% \begin{tightemize}
+%     \item Improve startup skills from mentoring by professionals, e.g. founders of sucessful startups and members of venture capitalists firms
+%     \item Collaborate with other founders and fellows in incubator to develop new ideas and promote overall success
+% \end{tightemize}
+% \sectionsep
+
+% \section{Other Experience}
+
+% \runsubsection{\href{https://www.northropgrumman.com/AboutUs/BusinessSectors/MissionSystems/Pages/default.aspx}{{Northrop Grumman \ExternalLink}}, \href{https://www.rhsmith.umd.edu/programs/undergraduate-programs/academics/fellows-special-programs/quest}{{QUEST \ExternalLink}}}
+% \location{Baltimore, MD}
+% \descriptit{Predictive Analytics Consultant}
+% \location{January 2019 - May 2019}
+% \begin{tightemize}
+% \item Created logistic regression model that predicted system level defects with 93\% accuracy, increased 33\% from 70\%
+% \item Integrated client feedback to specify model outputs to improve applicability which reduces manufacturing costs 
+% \item Presented findings to VP's and Senior Engineers at Northrop Grumman, and providing a multi-year implementation plan    
+% \end{tightemize}
+% \sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Links} 
+% LinkedIn://  \href{https://www.linkedin.com/in/jack-sturtevant/}{\custombold{jack-sturtevant} \ExternalLink} \\
+% Github:// \href{https://github.com/jacksturtevant}{\custombold{jacksturtevant} \ExternalLink} \\
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Coursework}
+% Robot Swarming \\
+% Controls for Robots \\
+% Machine Learning \\
+% Data Mining \\
+% Artificial Emotional Intelligence \\
+% Designing Innovative Systems \\
+% Design and Quality \\
+% Computer Vision \\
+% Nature Inspired Computing \\
+
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Additional information}
+\runsubsection{Skills}: 
+Python \hfill | \hfill
+Java \hfill | \hfill
+Robotics \hfill | \hfill
+C\# \hfill | \hfill
+C \hfill | \hfill
+MATLAB \hfill | \hfill
+JavaScript \hfill | \hfill
+SQL \hfill | \hfill
+Git \hfill | \hfill
+Flask \hfill | \hfill
+Atlassian \\
+\hspace{1.0cm} Docker \hfill | \hfill
+Tensorflow \hfill | \hfill
+Amazon Web Services \hfill | \hfill
+ROS \hfill | \hfill
+Client Centric Design \hfill | \hfill
+Agile \hfill | \hfill
+Team Coordination
+
+\runsubsection{Profiles}: 
+LinkedIn://  \href{https://www.linkedin.com/in/jack-sturtevant/}{\custombold{jack-sturtevant} \ExternalLink} |
+Github:// \href{https://github.com/jacksturtevant}{\custombold{jacksturtevant} \ExternalLink}
+
+
+% \sectionsep
+
+% \runsubsection{Electrical} \\
+% MicroController Prototyping \hfill \progressbar[filledcolor=headings, subdivisions=1]{0.5}\\
+
+% \sectionsep
+% \section{Awards}
+% \awards{Smith Endowed Scholar} \hfill Fall 2019 \\
+% \awards{Dean's List} \hfill Fall 2016 - Spring 2019 \\  
+% \awards{Kim Scholar} \hfill Fall 2017 - Fall 2018 \\ 
+% \awards{Hughes Network Scholar} \hfill Fall 2017 \\ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     INTERESTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{interests} 
+
+% Video Games \textbf{|} 
+% Board \& Card Games \textbf{|}
+% Hiking \textbf{|}
+% Stand-up Comedy \textbf{|}
+% Water Sports \textbf{|}
+% Sports (Playing \& Watching) \textbf{|}
+% Animals
+% \sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Projects}
+
+% \runsubsection{\href{https://www.rhsmith.umd.edu/programs/undergraduate-programs/academics/fellows-special-programs/quest}{{QUEST Honors Capstone \ExternalLink}}}
+% \location{January 2019 - May 2019}
+% \begin{tightemize}
+% \item Created logistic regression model that predicted system level defects with 93\% accuracy, increased 33\% from previously detecting 70\%
+% \item Integrated client feedback to specify model outputs to improve applicability which increases manufacturing yield and reduces part reworks  
+% \item Presented findings to VP's and Senior Engineers at Northrop Grumman, and providing a multi-year implementation plan    
+% \end{tightemize}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Research}
+
+% \runsubsection{\href{https://gamma.umd.edu/publication}{{Robotic Emotional Intelligence \ExternalLink}}}
+% \location{Aug 2019 – Present}
+% \begin{tightemize}
+%     \item Improve robot navigation through crowds by tracking human facial expression and body language to extrapolate emotional state
+% \end{tightemize}
+% \sectionsep 
+
+
+\begin{minipage}[t]{0.04\textwidth} 
+\hfill
+\end{minipage}
+\end{document}
