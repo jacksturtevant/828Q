@@ -70,25 +70,43 @@
 \section{Methods}
     The goal of this research is to determine if a recurrent neural network with a modified topology can be evolved to 
     compete sucessfully in simulated war game. The topology of these networks are modified so have sections of a network similar
-    to the sections in a brain. Furthermore, the network is evolved using evolutionary strategies. 
+    to the sections in a brain. Furthermore, the network is evolved using evolutionary strategies. Our goal is to evaluate the 
+    clustering method against the fully connected method in order to see if the clustering method, which has far less
+    memory required per neuron, can produce the same or better results
 
     \subsection{War Game}
     The scenario in which the neural networks are being trained is a simple simulated war game. In this game, the networks control an agent
-    with the ability to move, look, and shoot. Two or more networks are placed in a randomized arena, and have the goal of
-    finding and elminating the agents controlled by other networks. Meanwhile, the network is attempting to keep its own agent alive.
+    with the ability to move, look, and shoot. Each game consists of two teams of equal size, consisting of 1 or more agents, each controlled by its own network.
+    These teams have the goal of finding and eliminating all agents on the other teams. Meanwhile, the agents are trying to survive, and keep their other teammates alive.
+    These agents shoot lazers that will hit the first agent or obstacle in the lazer's path. These lazers will always do the same amount of damage to an agent they hit.
 
     \subsection{Clustering Method}
-    The topology of the networks used in this study are different from a normal recurrent neural network. Instead of being fully
-    connected between all nodes, the network consists of clusters of fully connected neurons. These clusters consist of 10000 
-    neurons, and are viewed as a 100x100 square. Within a square, the neurons are fully connected. The clusters can be viewed as 
-    being placed in a similar larger square. To simulate how brain sections which are close in distance tend to have many connections,
+    The topology of the networks used in this study are different from a normal recurrent neural network. 
+    Our inspiration comes from the brain which is roughly separated into modular ‘regions’ with connections between them.
+    Instead of being fully
+    connected between all nodes, the network consists of clusters of fully connected neurons. The size of each cluster is $N^2$,
+    forming an $NxN$ square of fully connected neurons. These clusters  Each of these clusters are their own node within a graph network. 
+    To simulate how brain sections which are close in distance tend to have many connections,
     the edge neurons of a given cluster are connected to the edge neurons of the adjacent cluster. Additionally, to maintain 
     that sections of the brain which are far apart have sparse connections, each neuron will have one random connection to 
-    another neuron in a different cluster, which need not be adjacent. 
+    another neuron in a different cluster, which need not be adjacent. This allows our network to have connections between all
+    neurons, while still significantly reducing memory use. 
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.25\textwidth,natwidth=300,natheight=200]{fig/828.png}
+      \caption{Animal call signal in time domain, taken at a sampling frequency of $5\si{\kilo\hertz}$.}
+      \label{fig:call}
+  \end{figure}
+  
 
     \subsection{Evolutionary Strategies}
     These networks use evolutionary strategies for training methods. The fitness of a given network is determined by its performance
-    in the war simulation. \textbf{FILL THIS IN}. Mutations are made using the $1/5th$ rule, using $c=\textbf{FILL THIS IN}$.
+    in the war simulation. Specifically, if an agent hits an enemy agent with their lazer, their fitness will increase by one. Likewise,
+    and agent that is shot by another agent will have their fitness decrease by one. Elitism is used across generations, ensuring the 
+    best performing agent in a game is passed to the next generation. 
+
+    \textbf{FILL THIS IN}. Mutations are made using the $1/5th$ rule, using $c=\textbf{FILL THIS IN}$.
     Mutations in these networks can be any of the following: modify weights of a connection, changing which nodes have connections,
     adding or removing a neuron. Additionally, crossover is \textbf{FILL THIS IN}. The selection strategy for developing new 
     prodigy is \textbf{FILL THIS IN}. Finally, elitism is used to ensure propogation of strong networks. 
